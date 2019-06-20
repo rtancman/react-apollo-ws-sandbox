@@ -16,10 +16,11 @@ const httpLink = new HttpLink({
 });
 
 const wsLink = new WebSocketLink({
-  uri: `ws://localhost:8080/subscriptions`,
+  uri: `ws://localhost:8080/subscriptions?tenantID=280921027681`,
   options: {
-    reconnect: true
-  }
+    reconnect: true,
+    lazy: true,
+  },
 });
 
 const link = split(
